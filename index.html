@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROG2005 - Part 1: TypeScript Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Harvey Norman Style Inventory System </h1>
+        <p>PROG2005 Assessment 2 - Part 1</p>
+    </header>
+
+    <!-- 添加/更新表单 -->
+    <section class="form-section">
+        <h2>Add or Update Item</h2>
+        <form id="itemForm">
+            <input type="number" id="id" placeholder="Item ID (Unique)" required>
+            <input type="text" id="name" placeholder="Item Name" required>
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Tools">Tools</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <input type="number" id="quantity" placeholder="Quantity" required>
+            <input type="number" step="0.01" id="price" placeholder="Price" required>
+            <input type="text" id="supplier" placeholder="Supplier Name" required>
+            <select id="stockStatus" required>
+                <option value="In Stock">In Stock</option>
+                <option value="Low Stock">Low Stock</option>
+                <option value="Out of Stock">Out of Stock</option>
+            </select>
+            <select id="popular" required>
+                <option value="No">Popular? No</option>
+                <option value="Yes">Popular? Yes</option>
+            </select>
+            <input type="text" id="comment" placeholder="Comment (Optional)">
+            <button type="submit">Add/Update Item</button>
+        </form>
+    </section>
+
+    <!-- 搜索与操作 -->
+    <section class="actions">
+        <div>
+            <input type="text" id="searchInput" placeholder="Search by Name">
+            <button onclick="searchItem()">Search</button>
+        </div>
+        <div>
+            <button onclick="displayAllItems()">Display All</button>
+            <button onclick="displayPopularItems()">Display Popular</button>
+        </div>
+    </section>
+
+    <!-- 删除功能 (基于 Name) -->
+    <section class="delete-section">
+        <h2>Delete Item</h2>
+        <div>
+            <input type="text" id="deleteName" placeholder="Enter Item Name to Delete">
+            <button onclick="deleteItem()">Delete Item</button>
+        </div>
+    </section>
+
+    <!-- 结果显示区域 -->
+    <section class="results" id="results">
+        <!-- 表格和消息将在这里动态生成 -->
+    </section>
+</div>
+
+<!-- 编译后的 JavaScript 会注入到这里 -->
+<script src="app.js"></script>
+</body>
+</html>
